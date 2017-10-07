@@ -1,0 +1,6 @@
+
+sudo apt-get install synaptic htop mc tree git tmux ffmpeg dos2unix gparted virtualbox inkscape gimp compizconfig-settings-manager vlc ubuntu-restricted-extras diodon shutter
+
+to create the key:
+
+ssh-keygen -t rsa

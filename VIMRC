@@ -1,0 +1,29 @@
+set showcmd
+set noshowmode
+syntax enable
+
+set title
+set expandtab
+set smarttab
+set shiftwidth=4
+set softtabstop=4
+
+set number
+set relativenumber
+set ignorecase
+set smartcase
+
+set incsearch
+noremap <C-B> :set hlsearch! hlsearch?<CR>
+set nohls
+
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+
+nnoremap <F3> :set number! <CR> :set relativenumber! <CR>
+
+nnoremap ; :
+
+
+
