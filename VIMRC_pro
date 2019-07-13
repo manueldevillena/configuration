@@ -96,3 +96,11 @@ autocmd VimEnter * redraw!
 let g:syntastic_mode_map = { 'mode': 'passive' }
  
 " ~/.vimrc ends here
+"
+" git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+"
+"enter in vim:
+":PluginInstall
+"
+"then:
+"ln -s ~/.vim/bundle/Zenburn/colors ~/.vim/colors
