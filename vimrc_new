@@ -1,0 +1,108 @@
+set showcmd
+set noshowmode
+syntax enable
+
+set title
+set expandtab
+set smarttab
+set shiftwidth=4
+set softtabstop=4
+
+set number
+set relativenumber
+set ignorecase
+set smartcase
+
+set incsearch
+noremap <C-B> :set hlsearch! hlsearch?<CR>
+set nohls
+
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+
+nnoremap <F3> :set number! <CR> :set relativenumber! <CR>
+
+nnoremap ; :
+
+filetype plugin indent on
+set autoindent
+
+
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
+
+au BufNewFile,BufRead *.yml
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set autoindent |
+    \ set fileformat=unix
+
+nnoremap <C-P> :term <CR>
+
+
+" commands in split
+command! -nargs=* -complete=shellcmd Rsplit execute "new | r! <args>"
+
+set splitright
+set splitbelow
+
+
+nnoremap ,s   :Gstatus<CR>
+nnoremap ,c   :Gcommit<CR>i
+nnoremap ,g   :! git lg<CR>
+nnoremap ,d   :! git push
+
+" move between splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+"call plug#begin()
+"Plug 'lervag/vimtex'
+"Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'nvie/vim-flake8'
+Plugin 'tpope/vim-fugitive'
+Plugin 'jnurmine/Zenburn'
+Plugin 'vim-airline/vim-airline'
+Plugin 'lervag/vimtex'
+Plugin 'junegunn/limelight.vim'
+Plugin 'junegunn/goyo.vim'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
+let python_highlight_all=1
+syntax on
+let g:zenburn_high_Contrast = 1
+let g:airline#extensions#whitespace#enabled = 0
+let g:instant_markdown_slow = 1
+let g:limelight_conceal_ctermfg = 244 "'blue'
+set laststatus=2
+set previewheight=30
+map <C-n> :NERDTreeToggle<CR>
+
+call vundle#end()
+
+" to avoid the print of strange charachters due to terminal queries
+autocmd VimEnter * redraw!
+let g:syntastic_mode_map = { 'mode': 'passive' }
+
+" Spell check options
+set spell
+set spelllang=en_gb
+
+" Markdown options
+autocmd FileType markdown normal zR
