@@ -84,6 +84,7 @@ Plugin 'junegunn/limelight.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
+Plugin 'xuhdev/vim-latex-live-preview'
 let python_highlight_all=1
 syntax on
 let g:zenburn_high_Contrast = 1
