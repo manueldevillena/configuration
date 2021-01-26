@@ -107,3 +107,9 @@ set spelllang=en_gb
 
 " Markdown options
 autocmd FileType markdown normal zR
+
+" Move lines up or down
+nnoremap K :m .-2<CR>==
+nnoremap J :m .+1<CR>==
+vnoremap K :m '<-2<CR>gv=gv
+vnoremap J :m '>+1<CR>gv=gv
