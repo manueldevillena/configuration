@@ -119,3 +119,13 @@ compile_markdown () {
 compile_markdown_general () {
     pandoc $1 -o ${1%.*}.pdf --table-of-contents --number-sections --pdf-engine=xelatex --indented-code-classes=javascript --highlight-style=monochrome -V mainfont="Palatino" -V documentclass=report -V papersize=A4 -V geometry:margin=1in
 }
+
+updateall () {
+    sudo apt update && sudo apt upgrade
+}
+
+# My alias
+alias lll='ls -alFh'
+alias ll='ls -lFh'
+alias la='ls -Ah'
+alias l='ls -CFh'
